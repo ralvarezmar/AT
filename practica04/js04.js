@@ -29,7 +29,6 @@ let velocity;
 try {
   velocity = 10;
   console.log("m/s:" + velocity + " " + convert(velocity, "abc"));
-
 } catch (e) {
   switch (e.name) {
     case "ReferenceError":
