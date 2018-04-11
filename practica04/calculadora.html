@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Calculadora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/calculadora.js"></script>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .calculadora {
+      padding: 10px 20px;
+      margin: 48px auto;
+      border-radius: 10%;
+      border: 1px #0F70C2 ridge;
+      width: 350px;
+      text-align: center;
+      background: #1e5799;
+      background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+      background: -webkit-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+      background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #207cca 100%, #7db9e8 100%);
+    }
+
+    #resultado {
+      border-radius: 25%;
+      padding: 10px;
+      border-width: 10px;
+      margin-bottom: 30px;
+      margin-top: 10px;
+      background-color: white;
+      overflow-x: scroll;
+      font-family: "courier new";
+    }
+
+    .calculadora button {
+      border-radius: 50%;
+      width: 60px;
+      padding: 10px;
+      background-color: #D5DADF;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculadora" <form action="#" name="calc" id="calc">
+    <div id="resultado"></div>
+    <div>
+      <br>
+      <button class="btn" value="C">C</button>
+      <br>
+      <br>
+      <button class="btn" value="7">7</button>
+      <button class="btn" value="8">8</button>
+      <button class="btn" value="9">9</button>
+      <button class="btn" value="/">/</button>
+      <br>
+      <br>
+      <button class="btn" value="4">4</button>
+      <button class="btn" value="5">5</button>
+      <button class="btn" value="6">6</button>
+      <button class="btn" value="*">*</button>
+      <br>
+      <br>
+      <button class="btn" value="1">1</button>
+      <button class="btn" value="2">2</button>
+      <button class="btn" value="3">3</button>
+      <button class="btn" value="-">-</button>
+      <br>
+      <br>
+      <button class="btn" value="0">0</button>
+      <button class="btn" value=".">.</button>
+      <button class="btn" value="=">=</button>
+      <button class="btn" value="+">+</button>
+      <br>
+    </div>
+  </div>
+  <script>
+    let calc = {
+      cuenta: undefined,
+      status: STATUS.PRIMERNUM,
+      num1: "",
+      num2: "",
+    };
+    $(document).ready(function() {
+      $(".btn").click(function() {
+        let key = $(this).text();
+        let resultado = getKey(key, calc);
+        $("#resultado").text(resultado);
+      });
+    });
+  </script>
+</body>

@@ -1,0 +1,117 @@
+Rubén Álvarez Martín
+rmartin
+
+Práctica 1.3:
+1.Página:https://es.wikipedia.org
+  Fecha: 31/01/2018
+  Número de errores:13
+  Errores:
+  1.Error: Element dl is missing a required instance of child element dd.
+
+  From line 200, column 1; to line 200, column 5
+
+  </a></dt>↩</dl>↩<ul>↩
+
+  Content model for element dl:
+  Either:Zero or more groups each consisting of one or more dt elements followed by one or more dd elements, optionally intermixed with script-supporting elements.
+  Or: One or more div elements, optionally intermixed with script-supporting elements.
+  -Cierra un dl sin estar abierto.
+
+  2.Error: Duplicate ID wp-port.
+
+  From line 248, column 5; to line 249, column 52
+
+  </tr>↩<tr>↩<td style="color:#000; font-size:100%" id="wp-port">↩<div
+
+  -ID duplicado. Este error aparece en más ocasiones(es el más repetido en esta página)
+
+  3.Error: Bad value cbk-zam for attribute lang on element a: Bad extlang subtag zam.
+
+  From line 467, column 1487; to line 467, column 1618
+
+  -cbk-zam"><a href="https://cbk-zam.wikipedia.org/wiki/" title="Chavacano" lang="cbk-zam" hreflang="cbk-zam" class="interlanguage-link-target">Chavac
+  -Valor erróneo para el elemento lang. No existe idioma con esa etiqueta
+
+  4.Error: Bad value simple for attribute hreflang on element a: The language subtag simple is not a valid IANA language part of a language tag.
+
+  From line 467, column 8930; to line 467, column 9063
+
+  i-simple"><a href="https://simple.wikipedia.org/wiki/" title="Simple English" lang="simple" hreflang="simple" class="interlanguage-link-target">Simple
+  - Valor erróneo para el elemento hreflang. Igual que el error anterior
+
+
+2.Página:http://www.urjc.es/
+  Fecha: 31/01/2018
+  Número de errores:49
+  Errores:
+	1.Error: No space between attributes.
+	At line 693, column 51
+
+	sion#matricula"class="row-flex
+	-No ha dejado un espacio entre atributos
+
+	2.Error: Duplicate ID mod-finder-searchform.
+ktop"  >↩	<form action="/" method="get" id="mod-finder-searchform" class="form-search" style="text-align: center; padding-right: 10px;">↩<div
+
+hone"  >↩	<form action="/" method="get" id="mod-finder-searchform" class="form-search" style="text-align: right; padding-right: 10px;">↩<div
+
+	-ID duplicado
+
+	3.Error: Attribute alt not allowed on element li at this point.
+
+	From line 1217, column 2; to line 1217, column 277
+
+	DE  2-->↩	<li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="300" data-link="http://w…ay="15000"  data-saveperformance="off"  alt="Oficina del Estudiante" title="Oficina del Estudiante">↩		<!-
+
+	Attributes for element li:
+	Global attributes
+	If the element is not a child of an ul: value
+	-Atributo alt dentro de elemento li. No está permitido
+
+	*La mayoría de errores son relativos a CSS y javascript
+
+
+3.Página: https://www.android.com/
+  Fecha: 31/01/2018
+  Número de errores: 157
+  Errores:
+  1.Error: A meta element with an http-equiv attribute whose value is X-UA-Compatible must have a content attribute with the value IE=edge.
+
+  From line 12, column 5; to line 12, column 63
+
+  ort">↩    <meta content="IE=11;IE=Edge" http-equiv="X-UA-Compatible">↩    <
+  - No se puede dar ese valor al atributo meta
+
+  2.Error: Element div not allowed as child of element label in this context. (Suppressing further errors from this subtree.)
+
+  From line 218, column 3; to line 218, column 24
+
+  lector>↩  <div class="c-select">↩    <
+
+  Contexts in which element div may be used:
+  Where flow content is expected.
+  As a child of a dl element.
+  Content model for element label:
+  Phrasing content, but with no descendant labelable elements unless it is the element’s labeled control, and no descendant label elements.
+  -No se puede tener un elemento div dentro de un elemento label
+
+  3.Error: Duplicate ID Combined-Shape.
+
+  From line 269, column 6030; to line 269, column 6730
+
+  5"></path><path d="M300.000006,30.3776548 C300.007676,20.714673 307.719998,13 317.210998,13 C326.734954,13 334…4968,53.7997113 L328.652026,53.7997113 L328.652026,30.3776548 Z" id="Combined-Shape" fill="#757575"></path
+  -ID duplicado
+
+  4.Error: No space between attributes.
+
+  At line 430, column 163
+
+  m_medium=promo"data-g-event="h
+  -No hay espacio entre los atributos
+
+  5.Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+  From line 578, column 27; to line 578, column 167
+
+    <img src="/static/2016/img/home/os-section/phone-pixel-black_1x.png" srcset="/static/2016/img/home/os-section/phone-pixel-black_2x.png 2x" />↩↩
+    -Un elemento img tiene que tener un atributo alt

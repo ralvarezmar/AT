@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>Compra de movil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    label {
+      text-align: right;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/action_page.html">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" name="Nombre" id="nombre"><br>
+    <label for="apellidos">Apellidos:</label><br>
+    <input type="text" name="Apellidos" id="apellidos"><br>
+    <label for="pais">País:</label><br>
+    <input type="text" name="pais" value="España" id="pais"><br>
+    <label for="direccion">Dirección:</label><br>
+    <input type="text" name="Dirección" id="direccion"><br>
+    <label for="poblacion">Población:</label><br>
+    <select name="Población" id=poblacion>
+        <option value="Comunidad de Madrid">Madrid</option>
+        <option value="Cataluña">Cataluña</option>
+        <option value="Galicia">Galicia</option>
+        <option value="Navarra">Navarra</option>
+        <option value="Castilla y Leon">Castilla y Leon</option>
+        <option value="Castilla La Mancha">Castilla La Mancha</option>
+        <option value="Andalucía">Andalucía</option>
+        <option value="Comunidad valenciana">Comunidad valenciana</option>
+        <option value="Extremadura">Extremadura</option>
+        <option value="Murcia">Murcia</option>
+        <option value="Baleares">Baleares</option>
+        <option value="Canarias">Canarias</option>
+      </select><br>
+    <label for="ciudad">Ciudad:</label><br>
+    <input type="text" name="ciudad" id="ciudad"><br>
+    <label for="cp">Código postal(Máx 99999):</label><br>
+    <input type="number" name="Código Postal" id="cp" min="1" max="99999"><br><br>
+  </form>
+  <form>
+    <fieldset>
+      <legend>
+        Datos del movil
+      </legend>
+      <label for="color">Elija un color:</label>
+      <input type="color" name="favcolor" id="color"><br> Elija la versión de Android deseada:<br>
+      <input type="radio" name="os" value="Android 6.0" checked id="marsh">
+      <label for="marsh">Android Marshmallow 6.0</label>
+      <input type="radio" name="os" value="Android 7.0" id="noug">
+      <label for="noug">Android Nougat 7.0</label>
+      <input type="radio" name="os" value="Android 8.0" id="oreo">
+      <label for="oreo">Android Oreo 8.0</label><br>
+      <input type="radio" name="os" value="other" id="otro">
+      <label for="otro">Otro(Especifique cual)</label>
+      <input type="text" id="version" class="form-control" name="version">
+    </fieldset>
+  </form>
+
+  <form>
+    <fieldset>
+      <legend>
+        Pago
+      </legend>
+      Indique forma de pago:
+      <select name="Pago">
+          <option value="Tarjeta">Tarjeta de crédito</option>
+          <option value="Paypal">Paypal</option>
+          <option value="Efectivo">Efectivo</option>
+        </select><br>
+      <label for="datospago">Introduzca los datos de pago:</label>
+      <input type="pago" name="pago" id="datospago"><br>
+    </fieldset>
+  </form>
+
+  <form>
+    <input type="checkbox" name="terminos" value="si" id="ter">
+    <label for="ter">He leido los términos y condiciones</label><br>
+    <input type="checkbox" name="publicidad" value="si" id="publi">
+    <label for="publi">Deseo recibir comunicaciones comerciales</label><br>
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <title>Ejemplo</title>
+  <meta charset="utf-8">
+  <style>
+    p[class] {
+      font-size: x-large;
+    }
+
+    p[class="pepe"] {
+      color: blue;
+      font-style: italic;
+    }
+
+    p[class~="manolo"] {
+      background-color: lightblue;
+      text-decoration-style: solid;
+    }
+    p[class="juan"] {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <p>Párrafo 1</p>
+    <p class="manolo">Párrafo 2. Manolo</p>
+    <p class="pepe">Párrafo 3. Pepe</p>
+    <p class="manolo pepe">Párrafo 4. Manolo y pepe</p>
+    <p class="juan">Párrafo 5</p>
+
+</body>
+
+</html>

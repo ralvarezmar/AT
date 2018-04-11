@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contraseña</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/js03.js"></script>
+</head>
+
+<body>
+
+  <body>
+    <form action="/action_page.html">
+
+      <em>Contraseña correcta: <br>  Longitud > </em>
+      <em id=longitud>10</em><br>
+      <em>Minúsculas, mayúsculas, números y carácteres especiales > </em>
+      <em id=minimo>2</em><br>
+
+      <label for="pass1">Contraseña: </label><br>
+      <input type="password" name="contraseña" id="pass1"><br>
+      <label for="pass2">Introduzca de nuevo la contraseña:</label><br>
+      <input type="password" name="repeat" id="pass2"><br>
+      <div id="out1">Esperando</div>
+      <div id="out2">Esperando</div>
+
+
+    </form>
+
+    <script>
+      $(document).ready(function() {
+        $("#pass1").on("change keyup paste mouseup", function() {
+          var pass = $(this).val();
+          var len = $("#longitud").text();
+          var min = $("#minimo").text();
+          if (checkPassword(pass,len,min,min,min,min, "_,.-{}[]!·$%&/()=?¿¡'")) {
+            $("#out1").text("Contraseña ok");
+          } else {
+            $("#out1").text("Mala contraseña");
+          }
+        });
+        $("#pass2").on("change keyup paste mouseup", function() {
+          if ($(this).val() === $("#pass1").val()) {
+            $("#out2").text("Coinciden contraseñas");
+          } else {
+            $("#out2").text("Distintas contraseñas");
+          }
+        });
+      });
+    </script>
+  </body>
+
+</html>

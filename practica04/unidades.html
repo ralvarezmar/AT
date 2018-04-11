@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <title>Unidades</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/js02.js"></script>
+
+</head>
+
+<body>
+  <div id="vel">50</div><br>
+
+  <button class="boton" data-toggle="tooltip" title="Pasar a millas por segundo" data-placement="bottom">mps</button>
+  <button class="boton" data-toggle="tooltip" title="Pasar a metros por segundo" data-placement="bottom">m/s</button>
+  <button class="boton" data-toggle="tooltip" title="Pasar a kilimetros por hora" data-placement="bottom">km/h</button>
+  <br><br>
+  <div id="out"> </div>
+
+  <script>
+    $(document).ready(function() {
+      $(".boton").click(function() {
+        let vel = $("#vel").text();
+        let units = $(this).text();
+        $("#out").text(convert(vel, units));
+      });
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+Apartado 2.1:
+
+Ejemplo 1:
+Aparece el estilo del html y a continuación el contenido. El estilo define colores y formatos que después se le van a dar al contenido por medio de clases.
+El título (etiqueta h1) tiene color violeta, texto centrado y tamaño de fuente grande.
+La primera linea sale en ese formato porque en style está para la etiqueta p que tomen color azul, esté alineado a la izquierda y fondo amarillo
+La segunda linea pertenece a la clase feo(en style .feo), por lo cual está asignado color de letra rojo y fondo rosa.
+La ultima linea aparece con letras blancas y fondo negro porque la etiqueta div pertenece a la clase inverso.
+El fondo aparece en color beige porque en style el selector universal(*) aparece con ese atributo
+
+Ejemplo 2:
+El formato es igual que en el anterior ejemplo.
+div p es que p esté dentro de un div, por lo cual el párrafo 2,3, 4 y 5 toman el formato de este selector. (color azul)
+div>p es que p esté directamente dentro de un div; el párrafo 4 y 5 toman el formato de este selector(color azul del anterior y tamaño 200% de este)
+p+p es que haya un parrafo consecutivo a otro. El párrafo 5 toma el formato de este selector(azul, 200% y fondo amarillo)
+La linea "una sección" simplemente toma el formato por defecto de h2.
+Parrafo 1 no tiene ningún formato de style.
+
+Ejemplo 3:
+Línea 1:Formato normal, no tiene ninguna clase
+
+Línea 2: Texto subrayado. Toma el selector .castilla-la-mancha (todos los que están dentro de este están subrayados)
+
+Línea 3: Color rojo porque está dentro de la clase españa y el selector es .españa .toledo.
+        Centrado porque aplica la regla .toledo, .cuenca
+Línea 4: Centrado. Aplica la regla .toledo, .cuenca
+
+Línea 5:  Simplemente subrayado por tener relación con castilla la mancha
+
+Línea 6: Sin formato especial
+
+Línea 7: Sin formato especial
+
+Línea 8: Azul y centrado. Aplica la regla .toledo
+
+Ejemplo 4:
+Párrafo 1: Es un párrafo que está dentro de un div, pero no pertenece a ningun estilo. Formato normal
+
+Párrafo 2: Doble tamaño, letra azul y cursiva. Coge el formato del estilo #alfa, p#alfa y div#alfa
+
+El resto de elementos tiene formato normal porque no pertenecen a ningun estilo.
+
+Ningún párrafo tiene el fondo amarillo porque no hay div con el id alfa.
+
+Ejemplo 5:
+Párrafo 1: Formato normal.
+
+Párrafo 2: Color #CB0017 (rojo), subrayado (entra en style .urjc.reglamento por que el nombre de la clase cumple el estilo) y
+            fondo claro por cumplir el estilo .urjc, .reglamento
+Párrafo 2: Únicamente entra en el estilo .urjc, .reglamento porque la clase tiene el nombre reglamento ucm
+Párrafo 3: formato normal
+Párrafo 4: Fondo azul claro por entrar en el style .urjc, .reglamento y letra roja por .urjc
+Párrafo 4: formato normal
+
+Ejemplo 6:
+Párrafo 1 formato normal
+Entra en p[class] párrafos 2, 3 y 4 porque es cualquier parrafo que tenga una clase. Tienen un cuadrado verde con 1 px de anchura
+Entra en p[class="ventas"] párrafo 3 porque es la clase ventas. Letra en cursiva
+Entra en p[class~="ventas"] párrafo 3 y 4 porque es cualquier clase que contenga la palabra ventas. Tamaño x-large de letra
