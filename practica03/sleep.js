@@ -1,9 +1,7 @@
 'use strict'
 
-
 function sleep(x){
-  var init_time;
-  init_time=new Date().getTime()+(x*1000);
+  var init_time=new Date().getTime()+(x*1000);
   while(new Date().getTime()<init_time){}
 }
 

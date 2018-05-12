@@ -5,34 +5,38 @@
   <title>Ejemplo</title>
   <meta charset="utf-8">
   <style>
-    #prueba {
+    h1,h2{
       background-color: lightblue;
       font-size: x-large;
-      text-align: right;
     }
 
-    p#prueba {
+    *{
       color: blue;
     }
 
-    p {
+    .selector {
       background-color: lightblue;
-      text-decoration-style: solid;
     }
-
-    div #prueba {
-      text-align: center;
+    #prueba{
+      color: white;
+      background-color: black;
+    }
+    .prueba {
+      color: red;
     }
   </style>
 </head>
 
 <body>
-  <div>
-    <p>Párrafo 1</p>
-    <p id="prueba">Párrafo 2</p>
-    <p>Párrafo 3</p>
-  </div>
-  <p>Párrafo 4</p>
+  <h1>Párrafo 1</h1>
+  <h2>Párrafo 2</h2>
+  <p class="selector">Párrafo 3</p>
+  <p id="prueba">Párrafo 4</p>
+  <p>Párrafo 5</p>
+
+
+  <div> <p class=prueba>Párrafo de prueba</p>
+     </div>
 </body>
 
 </html>

@@ -16,6 +16,18 @@ var CUENTA = {
   MULTIPLICACION: {value: 3,name: "multiplicacion"},
 }
 
+class Calculadora{
+  constructor(){
+    this.cuenta=undefined;
+    this.status=STATUS.PRIMERNUM;
+    this.num1="";
+    this.num2="";
+  }
+  aCadena(){
+    return "(" + this.num1 + "," + this.num2 +")";
+  }
+}
+
 function operacion(calc){
   switch (calc.cuenta) {
     case "+":
@@ -88,18 +100,8 @@ function getKey(key,calc){
 }
 
 function testCalc(){
-  let calc={
-    cuenta:undefined,
-    status:STATUS.PRIMERNUM,
-    num1:"",
-    num2:"",
-  };
-  let calc2={
-    cuenta:undefined,
-    status:STATUS.PRIMERNUM,
-    num1:"",
-    num2:"",
-  };
+  let calc=new Calculadora();
+
   console.log(getKey( "5", calc))
   console.log(getKey( "+", calc))
   console.log(getKey( "6", calc))
@@ -111,11 +113,6 @@ function testCalc(){
   console.log(getKey( "2", calc))
   console.log(getKey( "=", calc))
   console.log(getKey( "c", calc))
-
-  console.log(getKey( "2", calc2))
-  console.log(getKey( "*", calc2))
-  console.log(getKey( "5", calc2))
-  console.log(getKey( "=", calc2))
 }
 
 testCalc();

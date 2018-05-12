@@ -5,47 +5,16 @@
   <title>Geolocalización</title>
   <meta charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="sesion.js"></script>
 </head>
 
 <body>
+  <div id="coords"> </div>
   <script>
-    'use strict'
     $(document).ready(function() {
-      let options = {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0
-      };
-
-      function success(pos) {
-        var x = pos.coords;
-        var mensaje = 'Posición actual\n';
-        mensaje += 'Latitud :' + x.latitude;
-        mensaje += '\nLongitud :' + x.longitude;
-        mensaje += '\nPrecisión :' + x.accuracy + " metros";
-        localStorage.setItem('posicion', input);
-        alert(mensaje);
-      }
-
-      function error(err) {
-        console.warn(`ERROR(${err.code}): ${err.message}`);
-      };
-
-      let posicion = localStorage.getItem('posicion');
-      if (!posicion) {
-        navigator.geolocation.getCurrentPosition(success, error, options);
-        localStorage.setItem('posicion', posicion);
-        alert("ubicacion: " + posicion);
-      } else {
-        alert("Ultima posicion: " + posicion);
-      }
-      for (let clave in localStorage) {
-        let valor = localStorage[clave];
-        console.log(clave + ": " + valor)
-      }
+      let message = getCoords();
+      $("#coords").text(message);
     });
   </script>
-
 </body>
-
 </html>

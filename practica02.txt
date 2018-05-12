@@ -12,9 +12,9 @@ Ejemplo 2:
 El formato es igual que en el anterior ejemplo.
 div p es que p esté dentro de un div, por lo cual el párrafo 2,3, 4 y 5 toman el formato de este selector. (color azul)
 div>p es que p esté directamente dentro de un div; el párrafo 4 y 5 toman el formato de este selector(color azul del anterior y tamaño 200% de este)
-p+p es que haya un parrafo consecutivo a otro. El párrafo 5 toma el formato de este selector(azul, 200% y fondo amarillo)
+p+p es que haya un párrafo consecutivo a otro. El párrafo 5 toma el formato de este selector(azul, 200% y fondo amarillo)
 La linea "una sección" simplemente toma el formato por defecto de h2.
-Parrafo 1 no tiene ningún formato de style.
+Párrafo 1 no tiene ningún formato de style.
 
 Ejemplo 3:
 Línea 1:Formato normal, no tiene ninguna clase
@@ -34,11 +34,11 @@ Línea 7: Sin formato especial
 Línea 8: Azul y centrado. Aplica la regla .toledo
 
 Ejemplo 4:
-Párrafo 1: Es un párrafo que está dentro de un div, pero no pertenece a ningun estilo. Formato normal
+Párrafo 1: Es un párrafo que está dentro de un div, pero no pertenece a ningún estilo. Formato normal
 
 Párrafo 2: Doble tamaño, letra azul y cursiva. Coge el formato del estilo #alfa, p#alfa y div#alfa
 
-El resto de elementos tiene formato normal porque no pertenecen a ningun estilo.
+El resto de elementos tiene formato normal porque no pertenecen a ningún estilo.
 
 Ningún párrafo tiene el fondo amarillo porque no hay div con el id alfa.
 
