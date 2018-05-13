@@ -18,7 +18,7 @@
 
 <body>
   <button id="recordar" >¿Dónde está mi coche?</button>
-  <button id="borrar">Borrar posición</button>
+  <button id="borrar" hidden="true">Borrar posición</button>
 
   <div id="mapa"></div>
   <div id="viewer"></div>
@@ -54,10 +54,11 @@
         my_mark.bindPopup("Usted está aquí").openPopup();
         let car = localStorage.getItem('carPos');
         if (car) {
-          console.log(car);
           let coord= car.split(",");
           let my_car = L.marker(coord).addTo(my_map);
-          my_car.bindPopup("Tu coche").openPopup();
+          $(document).ready(function(){
+              $("borrar").show();
+          });
         }
       }
 
@@ -71,7 +72,7 @@
         let coords = [latitud, longitud];
         localStorage.setItem('carPos', coords);
         let car_mark = L.marker(coords).addTo(my_map);
-        car_mark.bindPopup("Tu coche").openPopup();
+        $("#borrar").show();
       });
       $("#borrar").click(function() {
         for (let claves in localStorage) {
