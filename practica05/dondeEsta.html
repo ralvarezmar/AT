@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es-ES">
 
 <head>
   <title>Geolocalización </title>
@@ -17,15 +17,18 @@
 </head>
 
 <body>
-  <button id="recordar" value="recordar">¿Dónde está mi coche?</button>
-  <button id="borrar" value="borrar">Borrar posición</button>
+  <button id="recordar" >¿Dónde está mi coche?</button>
+  <button id="borrar">Borrar posición</button>
 
   <div id="mapa"></div>
+  <div id="viewer"></div>
 
   <script>
     'use strict'
-
     $(document).ready(function() {
+      let latitud;
+      let longitud;
+      let my_map;
 
       let options = {
         enableHighAccuracy: true,
@@ -39,37 +42,40 @@
       }
 
       function get_map(x) {
-        var latitud = x.latitude; //coordenada y
-        var longitud = x.longitude; //coordenada x
+        latitud = x.latitude;
+        longitud = x.longitude;
+        let coord = [latitud, longitud];
         let zoom = 16;
-        let my_map = L.map('mapa').setView([latitud, longitud], zoom);
+        my_map = L.map('mapa').setView(coord, zoom);
         L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
         }).addTo(my_map);
-
-        let coord = [latitud, longitud];
         let my_mark = L.marker(coord).addTo(my_map);
         my_mark.bindPopup("Usted está aquí").openPopup();
         let car = localStorage.getItem('carPos');
-        if (car != null) {
-          let my_car = L.marker(car).addTo(my_map);
-          my_mark.bindPopup("Tu coche").openPopup();
+        if (car) {
+          console.log(car);
+          let coord= car.split(",");
+          let my_car = L.marker(coord).addTo(my_map);
+          my_car.bindPopup("Tu coche").openPopup();
         }
       }
+
       function error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
       };
+
       navigator.geolocation.getCurrentPosition(success, error, options);
+
       $("#recordar").click(function() {
         let coords = [latitud, longitud];
-        let car_pos = localStorage.setItem('carPos', coords);
+        localStorage.setItem('carPos', coords);
         let car_mark = L.marker(coords).addTo(my_map);
-        my_mark.bindPopup("Tu coche").
-        my_mark.bindPopup("Tu coche").openPopup();
+        car_mark.bindPopup("Tu coche").openPopup();
       });
       $("#borrar").click(function() {
         for (let claves in localStorage) {
-          localStorage.removeItem();
+          localStorage.removeItem(claves);
         }
       });
     });

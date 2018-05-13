@@ -7,17 +7,25 @@
   let mensaje='';
   let name;
 
+  let position ={
+    name:'',
+    latitud:undefined,
+    longitud:undefined,
+    precision:undefined,
+    hora:undefined,
+  };
+
   function success(pos) {
     var x = pos.coords;
-    mensaje += 'Tu posición es: \n';
-    mensaje += 'Latitud:' + x.latitude.toFixed(3);
-    mensaje += ' Longitud:' + x.longitude.toFixed(3);
-    mensaje += ' con una precision de ' + x.accuracy.toFixed(3) + " metros ";
-    mensaje += ' a las ';
     var d = new Date();
     let hora=d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
-    mensaje += hora;
-    localStorage.setItem(name, mensaje);
+    position.name=name;
+    position.latitud=x.latitude.toFixed(3);
+    position.longitud=x.longitude.toFixed(3);
+    position.precision=x.accuracy.toFixed(3);
+    position.hora=hora;
+    var message=JSON.stringify(position);
+    localStorage.setItem(position.name, message);
   }
 
   function error(err) {
@@ -32,16 +40,15 @@
 
   function getCoords(){
     name=prompt("¿Cómo te llamas?");
-    let message = 'Nombre: ';
-    message += name;
     let output = localStorage.getItem(name);
     if (output) {
       navigator.geolocation.getCurrentPosition(success, error, options);
-      console.log(output);
-      return output;
+      var message=JSON.stringify(output);
+      return message;
     } else {
       navigator.geolocation.getCurrentPosition(success, error, options);
-      message+=localStorage.getItem(name);
+      //message+=localStorage.getItem(name);
+      var message=JSON.stringify(position);
       console.log(message);
       return message;
     }
