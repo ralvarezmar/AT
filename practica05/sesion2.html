@@ -14,12 +14,27 @@
 
   <script>
     $(document).ready(function() {
-      let message = getCoords();
-      $("#coords").text(message);
+      let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      };
+      function success(pos) {
+        let x = pos.coords;
+        let message = getCoords(x.latitude, x.longitude, x.accuracy);
+        $("#coords").text(message);
+      }
       $(".btn").click(function() {
-        borrar();
+        for (let clave in localStorage) {
+          localStorage.removeItem(clave);
+        }
       });
+      navigator.geolocation.getCurrentPosition(success, error, options);
     });
   </script>
 </body>
+
 </html>
